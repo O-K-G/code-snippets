@@ -22,12 +22,16 @@ const ProgressBarLoader = () => {
     const maxBarsWidth = (Math.max(js, reactJS) + '%');
 
     const useStyles = makeStyles((theme) => ({
-        margin: {
-            marginBottom: theme.spacing(3)
+        title: {
+            marginBottom: theme.spacing(3),
+            '@media (max-width:1024px)': {
+                fontSize: "1rem"
+            }
         },
         link: {
             cursor: "pointer",
-            textDecoration: "underline"
+            textDecoration: "underline",
+            fontSize: "0.75rem"
         },
         progressBarContainer: {
 
@@ -42,7 +46,7 @@ const ProgressBarLoader = () => {
     }));
 
     const classes = useStyles();
-    
+
 
     // Will run once on component load.
 
@@ -59,20 +63,20 @@ const ProgressBarLoader = () => {
 
     return (
         <>
-        <Typography className={classes.margin} variant="h6" gutterBottom>Code snippet no. 1: Fork and adjust generic progress bars, to add progressing percentage</Typography>
-        <Grid
-            container
-            direction="column"
-            justify="flex-start"
-            alignItems="flex-start"
-            className={classes.progressBarContainer}
-        >
-            <Grid className={classes.innerContainer} item xs={12}>
-                <ProgressBar completed={js} marginTop={0} />
-                <ProgressBar completed={reactJS} marginTop={'16px'} /> {/* 16px is based on Material-UI's 8px scaling factor. */}
+            <Typography className={classes.title} align="center" variant="h6" gutterBottom>Snippet no. 1: Fork and adjust generic progress bars, to add progressing percentage</Typography>
+            <Grid
+                container
+                direction="column"
+                justify="flex-start"
+                alignItems="flex-start"
+                className={classes.progressBarContainer}
+            >
+                <Grid className={classes.innerContainer} item xs={12}>
+                    <ProgressBar completed={js} marginTop={0} />
+                    <ProgressBar completed={reactJS} marginTop={'16px'} /> {/* 16px is based on Material-UI's 8px scaling factor. */}
+                </Grid>
             </Grid>
-        </Grid>
-        <Typography variant="body1" gutterBottom>The forked repo is available <Link className={classes.link} color="textPrimary" onClick={() => window.open("https://github.com/O-K-G/simple-progress-bar", "_blank", "noreferrer")} variant="body1">here</Link>.</Typography>
+            <Typography variant="caption" color="textSecondary" gutterBottom>The forked repo is available <Link className={classes.link} color="textPrimary" onClick={() => window.open("https://github.com/O-K-G/simple-progress-bar", "_blank", "noreferrer")} variant="body1">here</Link>.</Typography>
         </>
     );
 }
