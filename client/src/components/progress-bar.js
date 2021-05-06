@@ -8,7 +8,10 @@ const ProgressBar = (props) => {
         containerStyles: {
             height: '100%',
             width: 'auto',
-            marginTop: props.marginTop
+            marginTop: props.marginTop,
+            '@media (max-width:1024px)': {
+                minWidth: "500%",
+            }
 
             // // Optional
             // backgroundColor: "#e0e0de",
@@ -16,8 +19,8 @@ const ProgressBar = (props) => {
         },
         fillerStyles: {
             width: props.completed + '%',
-            backgroundColor: theme.palette.text.secondary,
-            borderRadius: 'inherit',
+            background: "linear-gradient(to right, #0f0c29, #302b63, #24243e)",
+            borderRadius: '15px',
             textAlign: 'right',
             transition: 'width 1s ease-in-out'
         },
