@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import ProgressBar from './progress-bar';
 import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 
 const ProgressBarLoader = () => {
 
@@ -23,6 +24,10 @@ const ProgressBarLoader = () => {
     const useStyles = makeStyles((theme) => ({
         margin: {
             marginBottom: theme.spacing(3)
+        },
+        link: {
+            cursor: "pointer",
+            textDecoration: "underline"
         },
         progressBarContainer: {
 
@@ -67,6 +72,7 @@ const ProgressBarLoader = () => {
                 <ProgressBar completed={reactJS} marginTop={'16px'} /> {/* 16px is based on Material-UI's 8px scaling factor. */}
             </Grid>
         </Grid>
+        <Typography variant="body1" gutterBottom>The forked repo is available <Link className={classes.link} color="textPrimary" onClick={() => window.open("https://github.com/O-K-G/simple-progress-bar", "_blank", "noreferrer")} variant="body1">here</Link>.</Typography>
         </>
     );
 }

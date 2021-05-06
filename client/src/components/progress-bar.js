@@ -16,7 +16,7 @@ const ProgressBar = (props) => {
         },
         fillerStyles: {
             width: props.completed + '%',
-            backgroundColor: '#fff',
+            backgroundColor: theme.palette.text.secondary,
             borderRadius: 'inherit',
             textAlign: 'right',
             transition: 'width 1s ease-in-out'
@@ -24,7 +24,7 @@ const ProgressBar = (props) => {
         labelStyles: {
             paddingLeft: 'auto',
             paddingRight: 'auto',
-            color: '#000',
+            color: "#fff",
             marginTop: 0,
             marginLeft: 0,
             marginRight: theme.spacing(1),
