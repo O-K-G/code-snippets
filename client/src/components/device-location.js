@@ -4,6 +4,7 @@ import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Tooltip from '@material-ui/core/Tooltip';
 import Paper from '@material-ui/core/Paper';
+import SimplePopover from './location-map';
 
 const DeviceLocation = () => {
     const [coordinates, setCoordinates] = useState(false);
@@ -84,6 +85,7 @@ const DeviceLocation = () => {
                     <Typography display="inline" className={classes.dataTitle} variant="body1" gutterBottom>Your speed:</Typography> <Typography display="inline" variant="body1" gutterBottom>{coordinates.speed ? coordinates.speed : "No data provided from the device"}</Typography>
                 </div>
             </div>}
+            <SimplePopover longitude={coordinates.longitude} latitude={coordinates.latitude} />
         </>
     );
 }
