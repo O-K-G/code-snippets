@@ -43,7 +43,7 @@ const DeviceLocation = () => {
         }, (err) => {
             console.warn(err.message);
             setCoordinates(err);
-        });
+        }, { enableHighAccuracy: true });
     }, []);
     return (
         <>
