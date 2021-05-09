@@ -5,6 +5,7 @@ import ProgressBarLoader from './components/progress-bar-loader';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import DeviceLocation from './components/device-location';
+import Jsonp from './components/jsonp';
 
 const App = () => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -40,6 +41,7 @@ const App = () => {
       <div className={classes.root}>
         <ProgressBarLoader />
         <DeviceLocation />
+        <Jsonp />
       </div>
     </ThemeProvider>
   );
