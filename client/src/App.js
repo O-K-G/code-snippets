@@ -6,6 +6,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import DeviceLocation from './components/device-location';
 import Jsonp from './components/jsonp';
+import DeepNest from './components/deepNest';
 
 const App = () => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -42,6 +43,7 @@ const App = () => {
         <ProgressBarLoader />
         <DeviceLocation />
         <Jsonp />
+        <DeepNest />
       </div>
     </ThemeProvider>
   );
